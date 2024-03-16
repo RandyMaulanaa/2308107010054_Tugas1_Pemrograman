@@ -2,25 +2,25 @@ Ini adalah sebuah program sederhana yang dimana bisa konversikan bilangan dari D
 Biner ke Desimal, Desimal ke Oktal dan Oktal ke Biner
 
 
-#include <stdio.h>
-int main(){
-	int bilangan;
-	int input, biner = 0, bit = 1;
-	int deci=0;
-	int oktal=0;
-	printf("|----------SELECT------------|\n");
-	printf("|1. Bilangan Desimal ke Biner|\n");
-	printf("|----------------------------|\n");
-	printf("|2. Bilangan Biner ke Desimal|\n");
-	printf("|----------------------------|\n");
-	printf("|3. Bilangan Desimal ke Oktal|\n");
-	printf("|----------------------------|\n");
-	printf("|4. Bilangan Oktal ke Desimal|\n");
-	printf("|----------------------------|\n");
-	printf("Masukkan opsi bilangan yang ingin dicari= ");
-	scanf("%d",&bilangan);
+		#include <stdio.h>
+		int main(){
+			int bilangan;
+			int input, biner = 0, bit = 1;
+			int deci=0;
+			int oktal=0;
+			printf("|----------SELECT------------|\n");
+			printf("|1. Bilangan Desimal ke Biner|\n");
+			printf("|----------------------------|\n");
+			printf("|2. Bilangan Biner ke Desimal|\n");
+			printf("|----------------------------|\n");
+			printf("|3. Bilangan Desimal ke Oktal|\n");
+			printf("|----------------------------|\n");
+			printf("|4. Bilangan Oktal ke Desimal|\n");
+			printf("|----------------------------|\n");
+			printf("Masukkan opsi bilangan yang ingin dicari= ");
+			scanf("%d",&bilangan);
 	
-	switch(bilangan){
+ 		switch(bilangan){
 		case 1:
 		printf("Masukkan Angka Desimal= ");
 		scanf("%d",&input);
@@ -85,8 +85,8 @@ int main(){
 		break;
 	}
 	
-return 0;
-}
+		return 0;
+		}
 
 
 kode diatas adalah kode yang ingin konversikan bilangan tertentu
@@ -103,14 +103,15 @@ disini kita bisa pilih case, ada 1,2,3,4
 |----------------------------|
 
 pada bagain ini diminta untuk memilih case menurut keperluan kita sendiri,dan inputan user akan di simpan di variabel bilangan
-printf("Masukkan opsi bilangan yang ingin dicari= ");
-	scanf("%d",&bilangan);
+
+		printf("Masukkan opsi bilangan yang ingin dicari= ");
+			scanf("%d",&bilangan);
 
 ketika user memilih case 1 maka kode program ini yang di eksekusi
-case 1:
+
+		case 1:
 		printf("Masukkan Angka Desimal= ");	
 		scanf("%d",&input);
-		
 		while (input > 0){ 			
 							
 		int sisa = input % 2;			
@@ -138,7 +139,7 @@ sampai akhirnya hasil = 0
 lalu print printf("Binernya Adalah= %d\n", biner); berguna untuk menampilkan data yang di tampung di variabel biner
 
 
-  	case 2:
+  		case 2:
 		printf("Masukkan Angka Biner= ");
 		scanf("%d",&input);
 		
@@ -224,20 +225,20 @@ Tugas 2, Tahun kabisat
 menerus hingga 4 angka terpenuhi
 -tidak boleh memakai huruf, jika input huruf maka akan meminta input ulang agar 4 angka terpenuhu
 
-#include <stdio.h>
-int check(int input){				
-	int jumlah = 0;
-	while(input != 0) {
-		input /= 10;			
-		jumlah++;				
-	}
-	return jumlah;	
-}
+		#include <stdio.h>
+		int check(int input){				
+			int jumlah = 0;
+			while(input != 0) {
+				input /= 10;			
+				jumlah++;				
+			}
+			return jumlah;	
+		}
 
-int main(){
-	int input;
-	int huruf;
-	do{
+		int main(){
+			int input;
+			int huruf;
+			do{
 		printf("Masukkan Tahun: ");
 		if(scanf("%d", &input)!=1){
 			printf("Tahun Tidak Valid Silahkan Input Ulang\n");
@@ -248,64 +249,72 @@ int main(){
 		else if(check(input)!= 4){	
 		printf("Tahun Tidak Valid Silahkan Input Ulang\n");
 		}
-	}
-	while(check(input) != 4); 
-		if((input%4==0)&&(input%100!=0)||(input%400==0)){ 
-	printf("%d Adalah Tahun Kabiset Bang\n", input);
+			}
+			while(check(input) != 4); 
+			if((input%4==0)&&(input%100!=0)||(input%400==0)){ 
+			printf("%d Adalah Tahun Kabiset Bang\n", input);
+			}
+			else{
+			printf("Kalau %d Mah Bukan Tahun Kabiset\n", input); 
+			}
+
+			return 0;
 		}
-	else{
-	printf("Kalau %d Mah Bukan Tahun Kabiset\n", input); 
-		}
-
-	return 0;
-}
-
-
+  
 disini memakai function untuk ngecek apakah inputan 4 angka atau tidak
 
-int check(int input){				
-	int jumlah = 0;
-	while(input != 0) {
-		input /= 10;
-		jumlah++;	
-	}
-	return jumlah;	
-}
-
-di kode ini kita ingin return jumlah yang dimana perulangan terjadi ketika input != 0
+		int check(int input){				
+			int jumlah = 0;
+			while(input != 0) {
+				input /= 10;
+				jumlah++;	
+			}
+			return jumlah;
+ 		}
+   
+   di kode ini kita ingin return jumlah yang dimana perulangan terjadi ketika input != 0
 lalu input di bagi 10 untuk menghilangkan angka terakhir, contoh: 2024 / 10 = 202 artinya 4 hilang,
 jadi loop akan terus berjalan hingga input habis = 0, selagi loop berulang maka jumlah++ menambah,
 intinya di jumlah mengumpulkan jumlah semua data ada berapa menurut loop, bukan penjumlahan
 
-int main(){
-	int input;
-	int huruf;
-	do{
-		printf("Masukkan Tahun: ");
-		if(scanf("%d", &input)!=1){
-			printf("Tahun Tidak Valid Silahkan Input Ulang\n");
+		int main(){
+			int input;
+			int huruf;
+			do{
+				printf("Masukkan Tahun: ");
+				if(scanf("%d", &input)!=1){
+					printf("Tahun Tidak Valid Silahkan Input Ulang\n");
 			
-		while((huruf = getchar()) != '\n');
-		}
-
+				while((huruf = getchar()) != '\n');
+				}
+    
 disini menggunakan do while, yang dimana program ngeprint dan meminta inputan user dulu lalu
 ngecek kondisi, dan ketika kondisi salah, while bertugas untuk meminta inputan terus menerus agar
 kondisi tersebut benar
 memakai 2 variabel yakni, input untuk menerima inputan dan juga huruf, yakni untuk membersihkan
 scanf atau buffer ketika inputan tidak sesuai yang diminta, artinya variabel adalah varial pembantu
 untuk bisa menghapus buffer
-disini dikatakan ketika "if(scanf("%d", &input)!=1){", jika input tidak sama dengan integer maka akan
-jalankan kode printf("Tahun Tidak Valid Silahkan Input Ulang\n");
-while((huruf = getchar()) != '\n'); disini artinya loop untuk membersihkan buffer masukkan,
+disini dikatakan ketika 
+
+		"if(scanf("%d", &input)!=1){"
+  
+  jika input tidak sama dengan integer maka akan
+jalankan kode 
+
+	printf("Tahun Tidak Valid Silahkan Input Ulang\n");
+ 
+	while((huruf = getchar()) != '\n'); 
+
+disini artinya loop untuk membersihkan buffer masukkan,
 yang berarti program akan membaca karakter dari masukkan menggunakan fungsi getchar()
 sampai pada akhirnya karakter yang dibaca adalah newline( \n ), intinya ini merupakan kode untuk
 membersihkan karakter yang tidak valid atau bukan inputan yang kita inginkan yang input oleh user
 
-else if(check(input)!= 4){	
+		else if(check(input)!= 4){	
 		printf("Tahun Tidak Valid Silahkan Input Ulang\n");
+			}
 		}
-	}
-	while(check(input) != 4)
+		while(check(input) != 4)
 
 dikode ini inputan di cek yang dimana inputan ini adalah hasil return dari function,
 kan function dipanggil (check(input), jika tidak sama dengan 4 maka dia eksekusi
@@ -314,12 +323,12 @@ dan while di akhir kode diatas untuk terus meminta kembali inputan jika tidak sa
 agar syarat inputan tersebut terpenuhi
 
 
-if((input%4==0)&&(input%100!=0)||(input%400==0)){ 
-	printf("%d Adalah Tahun Kabiset Bang\n", input);
-		}
-	else{
-	printf("Kalau %d Mah Bukan Tahun Kabiset\n", input); 
-		}
+		if((input%4==0)&&(input%100!=0)||(input%400==0)){ 
+			printf("%d Adalah Tahun Kabiset Bang\n", input);
+				}
+			else{
+		printf("Kalau %d Mah Bukan Tahun Kabiset\n", input); 
+			}
 
 ketika 4 angka terpenuhi maka program akan menjalankan kode inti dari program ini
 yakni formula dari tahun kabisat, ketika input merupakan bilangan yang habis di bagi 4 dan tidak habis
